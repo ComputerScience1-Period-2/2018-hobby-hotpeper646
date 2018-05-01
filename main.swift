@@ -1,7 +1,7 @@
 // Allen ISD Computer Science Assignment
 // Hobby
-// John Williams
-// Computer Science III, Period 5
+// Yugi Sosa Rocha
+// Computer Science I, Period 2
 // 2018.05.01
 
 /********************************************************************************
@@ -27,11 +27,11 @@
 *
 *********************************************************************************/
 
-enum Base {
-    case first
-    case second
-    case third
-    case home
+enum gameNames {
+    case uno
+    case war
+    case conga
+    case yugio
 }
 
 
@@ -42,15 +42,18 @@ enum Base {
 *
 *********************************************************************************/
 
-struct AtBat0 {
-    let batterName : String
-    let pitcherName : String
-    let strikeCount : Int
-    let ballCount : Int
-    let baseReached : Base? // Non-nil only if batter makes it at least to first
-    let errorOccurred : Bool
-}
+struct cardGames: CustomStringConvertible {
+    
+let gameName : gameNames
+let complexity : Int
+let playTime : Double
+let time : String
+let fun : Bool
+let cardType : String
 
+var description : String {
+return "Name of the game : \(gameName) , Complexity : \(complexity) , Lenght of play : \(playTime) , Fun? : \(fun) , Type of cards \(cardType)" }
+}
 
 
 /********************************************************************************
@@ -59,21 +62,6 @@ struct AtBat0 {
 *     As an example:
 *
 *********************************************************************************/
-
-struct AtBat : CustomStringConvertible {
-    let batterName : String
-    let pitcherName : String
-    let strikeCount : Int
-    let ballCount : Int
-    let baseReached : Base? // Non-nil only if batter makes it at least to first
-    let errorOccurred : Bool
-
-    var description : String {
-        return "Batter: \(batterName) Pitcher: \(pitcherName) Count: \(ballCount)-\(strikeCount)"
-    }
-}
-
-
 /********************************************************************************
 * 4.  Instantiate (at least) two of your structures assigning them to variables
 *     (or contstants).
@@ -81,13 +69,13 @@ struct AtBat : CustomStringConvertible {
 *        
 *********************************************************************************/
 
-let firstAtBat = AtBat(batterName:"José Altuve", pitcherName:"Jesse Chavez",
-                       strikeCount:2, ballCount:3, baseReached:.first,
-                       errorOccurred:false)
+let firstGame = cardGames(gameName:.uno , complexity: 3,
+                          playTime: 30, time :" minutes" , fun:true,
+                          cardType:" Uno Standard Cards" )
 
-let secondAtBat = AtBat(batterName:"Max Stassi", pitcherName:"Jesse Chavez",
-                        strikeCount:0, ballCount:1, baseReached:.second,
-                        errorOccurred:false)
+let secondGame = cardGames(gameName:.war, complexity:1,
+                          playTime:5 , time:"minutes", fun:false,
+                          cardType:"Normal Bicycle Cards")
 
 
 
@@ -97,7 +85,7 @@ let secondAtBat = AtBat(batterName:"Max Stassi", pitcherName:"Jesse Chavez",
 *        
 *********************************************************************************/
 
-let atBats = [firstAtBat, secondAtBat]
+let games  = [firstGame, secondGame]
 
 
 /********************************************************************************
@@ -106,8 +94,8 @@ let atBats = [firstAtBat, secondAtBat]
 *        
 *********************************************************************************/
 
-for atBat in atBats {
-    print(atBat)
+for cardGames in games {
+    print(cardGames)
 }
 
 
