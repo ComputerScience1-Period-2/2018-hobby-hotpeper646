@@ -52,7 +52,7 @@ let fun : Bool
 let cardType : String
 
 var description : String {
-return "Name of the game : \(gameName) , Complexity : \(complexity) , Lenght of play : \(playTime) , Fun? : \(fun) , Type of cards \(cardType)" }
+    return "Name of the game : \(gameName) , Complexity : \(complexity) , Lenght of play : \(playTime) \(time), Fun? : \(fun) , Type of cards : \(cardType)" }
 }
 
 
@@ -71,10 +71,10 @@ return "Name of the game : \(gameName) , Complexity : \(complexity) , Lenght of 
 
 let firstGame = cardGames(gameName:.uno , complexity: 3,
                           playTime: 30, time :" minutes" , fun:true,
-                          cardType:" Uno Standard Cards" )
+                          cardType:"Uno Standard Cards" )
 
 let secondGame = cardGames(gameName:.war, complexity:1,
-                          playTime:5 , time:"minutes", fun:false,
+                          playTime:5, time:"minutes", fun:false,
                           cardType:"Normal Bicycle Cards")
 
 
